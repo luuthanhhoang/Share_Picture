@@ -1,0 +1,23 @@
+﻿@using ĐA1_Chia_se_anh.Models;
+
+
+@{
+    ViewBag.Title = "AnhTheoChuDe";
+    Layout = "~/Views/LayOut/NguoiDungLayout.cshtml";
+}
+<link href="~/Content/NguoiDungCssLayout/TrangChu.css" rel="stylesheet" />
+<div style="text-align: center; font-family:'Segoe UI'; font-weight: bold">
+    <h2>
+        @ViewBag.Anh
+    </h2>
+</div>
+@foreach (var item in Model)
+{
+    <div id="AlbumMoi" style="margin-left: 2.5%; width: 285px">
+        <div id="AnhBia"><img src="@Url.Content("~/HinhAnhDĐ/AnhCĐ/" + item.HinhAnh)" width="270" height="260" /></div>
+        <div id="TenAlbum" style="margin-bottom: 70px">@item.MaA, @item.NgayCapNhat</div>
+    </div>
+}
+
+
+

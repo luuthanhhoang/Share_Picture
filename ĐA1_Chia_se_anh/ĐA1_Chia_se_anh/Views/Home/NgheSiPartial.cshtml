@@ -1,0 +1,16 @@
+﻿@using ĐA1_Chia_se_anh.Models;
+@model List<NgheSi>
+
+@foreach (var item in Model)
+{
+<div id="AlbumMoi">
+    <div id="NgheSi" >
+        <a href="@Url.Action("XemChiTietNS","Home", new { @manghesi = item.MaNS})">
+            <img id="anhnghesi" src="@Url.Content("~/HinhAnhDĐ/" + item.AnhNS)" width="270" height="260" />
+        </a></div>
+    
+    <div id="TenNS" style="margin-bottom:50px">@item.TenNS</div>
+</div>
+}
+
+

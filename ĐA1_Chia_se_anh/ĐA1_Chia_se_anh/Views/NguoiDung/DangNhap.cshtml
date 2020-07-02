@@ -1,0 +1,50 @@
+﻿
+<link href="~/Content/NguoiDungCssLayout/font-awesome.css" rel="stylesheet" />
+
+<link href="~/Content/NguoiDungCssLayout/style.css" rel="stylesheet" />
+
+<body style="background-image: url(/HinhAnh/1.jpg)">
+
+    <!-- main -->
+    <div class="center-container">
+        <!--header-->
+        <div class="header-w3l">
+            <h1>Trang web chia sẻ ảnh</h1>
+        </div>
+        <!--//header-->
+        <div class="main-content-agile">
+            <div class="sub-main-w3">
+                <div class="wthree-pro">
+                    <h2>Đăng nhập</h2>
+                </div>
+                @using (Html.BeginForm())
+                {
+                    <input name="txtTaiKhoan" type="text" id="" placeholder="Tài khoản" style="outline: none;
+                        font-size: .9em;
+                        padding: 1em 3em 1em 1em;
+                        border: none;
+                        margin-bottom: 0.3em;
+                        background: rgba(255, 255, 255, 0.85);
+                        width: 82%;
+                        color: #000;
+                        border-radius: 30px;
+                        font-weight: 400;
+	                    font-family: 'Open Sans', sans-serif;
+                        letter-spacing: 1px;" />
+                    <br />
+                    <input name="txtMatKhau" type="password" placeholder="Mật khẩu" />
+                    <br />
+                    <input type="submit" id="btnSubmit" name="btnSubmit" />
+                }
+            </div>
+        </div>
+        <!--//main-->
+        <!--footer-->
+        <!--//footer-->
+    </div>
+
+</body>
+
+
+
+

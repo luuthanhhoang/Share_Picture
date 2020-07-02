@@ -1,0 +1,16 @@
+﻿@using ĐA1_Chia_se_anh.Models;
+@model NgheSi
+@{
+    ViewBag.Title = "XemChiTietNS";
+    Layout = "~/Views/LayOut/NguoiDungLayout.cshtml";
+}
+<div id="CTNsi" style="float:left; margin-left: 4%">
+    <h3 style="font-family: 'Segoe UI'; font-weight: bold"> Thông tin nghệ sĩ: </h3>
+    <div>Mã nghệ sĩ: @Model.MaNS</div>
+    <div>Họ và tên: @Model.TenNS</div>
+    <div> Ngày sinh: @Model.NgaySinh</div>
+    <div>
+        Hình ảnh:
+    </div>
+    <img src="@Url.Content("~/HinhAnhDĐ/" + Model.AnhNS)" style="width:300px; height: 290px" />
+</div>

@@ -1,0 +1,11 @@
+﻿@using ĐA1_Chia_se_anh.Models;
+@model List<ChuDe>
+
+@foreach (var item in Model)
+{
+    <a style="background-color:#b06010; font-family:'Segoe UI'; text-align:center
+;font-weight: bold" class="button button-submit" href="@Url.Action("AnhTheoChuDe",new { @MaChuDe = item.MaCD})">@item.TenChuDe</a>
+}
+    <a style="background-color:#b06010; font-family:'Segoe UI'; text-align:center
+;font-weight: bold" href="@Url.Action("DanhMucChuDe")" class="button button-submit">Chủ đề khác...</a>
+

@@ -1,0 +1,21 @@
+﻿#AlbumMoi, #AnhBia {
+    float: left;
+    text-align: center;
+    width: 320px;
+}
+#new-Album, #new-nghesi {
+    font-family: 'Segoe UI';
+    font-weight: bold;
+}
+#TenAlbum, #TenNS, #hinhnen {
+    font-family: 'Segoe UI';
+    font-weight: bold;
+}
+
+#new-Album, #new-nghesi, #hinhnen {
+    margin-left: 2%;
+}
+#col1, #col2, #col3{
+    margin-top: 50px;
+}
+

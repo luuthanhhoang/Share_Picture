@@ -1,0 +1,50 @@
+﻿@using ĐA1_Chia_se_anh.Models;
+@model List<NgheSi>
+@{
+    ViewBag.Title = "AllNgheSi";
+    Layout = "~/Views/LayOut/NguoiDungLayout.cshtml";
+}
+<h2 id="new-Album"> Tất cả Nghệ sĩ ảnh>>> </h2>
+@foreach (var item in Model)
+{
+<div id="AlbumMoi">
+    <div id="AnhBia">
+        <a href="#">
+            <img src="@Url.Content("~/HinhAnhDĐ/" + item.AnhNS)" width="270" height="260" />
+        </a>
+    </div>
+    <div id="TenNS" style="margin-bottom:50px">@item.TenNS, @item.GioiTinh</div>
+    <div id="TenNS" style="margin-bottom:50px">@item.NgaySinh, @item.Email</div>
+</div>
+}
+
+<style>
+    #AlbumMoi, #AnhBia {
+        float: left;
+        text-align: center;
+        width: 320px;
+    }
+
+    #new-Album, #new-nghesi {
+        font-family: 'Segoe UI';
+        font-weight: bold;
+    }
+
+    #TenAlbum, #TenNS, #hinhnen {
+        font-family: 'Segoe UI';
+        font-weight: bold;
+    }
+
+    #new-Album {
+        margin-left: 4%;
+    }
+
+    #new-nghesi, #AnhBia {
+        margin-left: 8.2%;
+    }
+
+    #new-Album {
+        margin-bottom: 30px;
+    }
+</style>
+

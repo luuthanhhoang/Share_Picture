@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ĐA1_Chia_se_anh.Models.AlBum>
+
+@{
+    ViewBag.Title = "AlBum";
+    Layout = "~/Views/LayOut/AdminLayout.cshtml";
+}
+
+<h2>AlBum</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaAB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenAB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayPhatHanh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Moi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnhBia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaNS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaAB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenAB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayPhatHanh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Moi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnhBia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

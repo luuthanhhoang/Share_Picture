@@ -1,0 +1,947 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3AA75D3-526D-4986-9F8C-A94F1293C5D0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ĐA1_Chia_se_anh</RootNamespace>
+    <AssemblyName>ĐA1_Chia_se_anh</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AllHoatDongController.cs" />
+    <Compile Include="Controllers\AllNgheSiController.cs" />
+    <Compile Include="Controllers\ChuDeController.cs" />
+    <Compile Include="Controllers\GioiThieuController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NgheSiController.cs" />
+    <Compile Include="Controllers\NguoiDungController.cs" />
+    <Compile Include="Controllers\QuanLyWebController.cs" />
+    <Compile Include="Controllers\TimKiemController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>Chia_se_anh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AlBum.cs">
+      <DependentUpon>Chia_se_anh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Anh.cs">
+      <DependentUpon>Chia_se_anh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaiViet.cs">
+      <DependentUpon>Chia_se_anh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Chia_se_anh.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Chia_se_anh.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Chia_se_anh.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Chia_se_anh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Chia_se_anh.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Chia_se_anh.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChuDe.cs">
+      <DependentUpon>Chia_se_anh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTNguoiDung.cs">
+      <DependentUpon>Chia_se_anh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NgheSi.cs">
+      <DependentUpon>Chia_se_anh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Chia_se_anh.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Admin\calendar.html" />
+    <Content Include="Content\Admin\chart.html" />
+    <Content Include="Content\Admin\css\bootstrap-responsive.css" />
+    <Content Include="Content\Admin\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\Admin\css\bootstrap.css" />
+    <Content Include="Content\Admin\css\bootstrap.min.css" />
+    <Content Include="Content\Admin\css\chosen.css" />
+    <Content Include="Content\Admin\css\elfinder.min.css" />
+    <Content Include="Content\Admin\css\elfinder.theme.css" />
+    <Content Include="Content\Admin\css\font-awesome-ie7.min.css" />
+    <Content Include="Content\Admin\css\font-awesome.min.css" />
+    <Content Include="Content\Admin\css\fullcalendar.css" />
+    <Content Include="Content\Admin\css\glyphicons.css" />
+    <Content Include="Content\Admin\css\halflings.css" />
+    <Content Include="Content\Admin\css\ie.css" />
+    <Content Include="Content\Admin\css\ie9.css" />
+    <Content Include="Content\Admin\css\jquery-ui-1.8.21.custom.css" />
+    <Content Include="Content\Admin\css\jquery.cleditor.css" />
+    <Content Include="Content\Admin\css\jquery.gritter.css" />
+    <Content Include="Content\Admin\css\jquery.iphone.toggle.css" />
+    <Content Include="Content\Admin\css\jquery.noty.css" />
+    <Content Include="Content\Admin\css\noty_theme_default.css" />
+    <Content Include="Content\Admin\css\style-forms.css" />
+    <Content Include="Content\Admin\css\style-responsive.css" />
+    <Content Include="Content\Admin\css\style.css" />
+    <Content Include="Content\Admin\css\uniform.default.css" />
+    <Content Include="Content\Admin\css\uploadify.css" />
+    <Content Include="Content\Admin\file-manager.html" />
+    <Content Include="Content\Admin\font\glyphicons-regular.svg" />
+    <Content Include="Content\Admin\font\glyphiconshalflings-regular.svg" />
+    <Content Include="Content\Admin\form.html" />
+    <Content Include="Content\Admin\gallery.html" />
+    <Content Include="Content\Admin\icon.html" />
+    <Content Include="Content\Admin\img\arrows-active.png" />
+    <Content Include="Content\Admin\img\arrows-normal.png" />
+    <Content Include="Content\Admin\img\avatar.jpg" />
+    <Content Include="Content\Admin\img\bg-input-focus.png" />
+    <Content Include="Content\Admin\img\bg-input.png" />
+    <Content Include="Content\Admin\img\bg-login.jpg" />
+    <Content Include="Content\Admin\img\browser-chrome-big.png" />
+    <Content Include="Content\Admin\img\browser-firefox-big.png" />
+    <Content Include="Content\Admin\img\browser-ie.png" />
+    <Content Include="Content\Admin\img\browser-opera.png" />
+    <Content Include="Content\Admin\img\browser-safari.png" />
+    <Content Include="Content\Admin\img\buttons.gif" />
+    <Content Include="Content\Admin\img\chat-left%402x.png" />
+    <Content Include="Content\Admin\img\chat-left-metro%402x.png" />
+    <Content Include="Content\Admin\img\chat-left-metro.png" />
+    <Content Include="Content\Admin\img\chat-left.png" />
+    <Content Include="Content\Admin\img\chat-right%402x.png" />
+    <Content Include="Content\Admin\img\chat-right-metro%402x.png" />
+    <Content Include="Content\Admin\img\chat-right-metro.png" />
+    <Content Include="Content\Admin\img\chat-right.png" />
+    <Content Include="Content\Admin\img\chosen-sprite.png" />
+    <Content Include="Content\Admin\img\close-button-white.png" />
+    <Content Include="Content\Admin\img\close-button.png" />
+    <Content Include="Content\Admin\img\crop.gif" />
+    <Content Include="Content\Admin\img\dialogs.png" />
+    <Content Include="Content\Admin\img\gallery\photo1.jpg" />
+    <Content Include="Content\Admin\img\gallery\photo10.jpg" />
+    <Content Include="Content\Admin\img\gallery\photo11.jpg" />
+    <Content Include="Content\Admin\img\gallery\photo12.jpg" />
+    <Content Include="Content\Admin\img\gallery\photo13.jpg" />
+    <Content Include="Content\Admin\img\gallery\photo2.jpg" />
+    <Content Include="Content\Admin\img\gallery\photo3.jpg" />
+    <Content Include="Content\Admin\img\gallery\photo4.jpg" />
+    <Content Include="Content\Admin\img\gallery\photo5.jpg" />
+    <Content Include="Content\Admin\img\gallery\photo6.jpg" />
+    <Content Include="Content\Admin\img\gallery\photo7.jpg" />
+    <Content Include="Content\Admin\img\gallery\photo8.jpg" />
+    <Content Include="Content\Admin\img\gallery\photo9.jpg" />
+    <Content Include="Content\Admin\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\Admin\img\glyphicons-halflings.png" />
+    <Content Include="Content\Admin\img\glyphicons-white.png" />
+    <Content Include="Content\Admin\img\glyphicons-white.svg" />
+    <Content Include="Content\Admin\img\glyphicons.png" />
+    <Content Include="Content\Admin\img\glyphicons.svg" />
+    <Content Include="Content\Admin\img\glyphicons_halflings-white.png" />
+    <Content Include="Content\Admin\img\glyphicons_halflings-white.svg" />
+    <Content Include="Content\Admin\img\glyphicons_halflings.png" />
+    <Content Include="Content\Admin\img\glyphicons_halflings.svg" />
+    <Content Include="Content\Admin\img\icons-big.png" />
+    <Content Include="Content\Admin\img\icons-small.png" />
+    <Content Include="Content\Admin\img\iphone-style-checkboxes\off-63584.png" />
+    <Content Include="Content\Admin\img\iphone-style-checkboxes\on-63584.png" />
+    <Content Include="Content\Admin\img\iphone-style-checkboxes\slider_center-63584.png" />
+    <Content Include="Content\Admin\img\iphone-style-checkboxes\slider_left-63584.png" />
+    <Content Include="Content\Admin\img\iphone-style-checkboxes\slider_right-63584.png" />
+    <Content Include="Content\Admin\img\progress.gif" />
+    <Content Include="Content\Admin\img\quicklook-bg.png" />
+    <Content Include="Content\Admin\img\quicklook-icons.png" />
+    <Content Include="Content\Admin\img\quote.png" />
+    <Content Include="Content\Admin\img\resize.png" />
+    <Content Include="Content\Admin\img\slider_r8.png" />
+    <Content Include="Content\Admin\img\spinner-mini.gif" />
+    <Content Include="Content\Admin\img\sprite.png" />
+    <Content Include="Content\Admin\img\timeline-bg.png" />
+    <Content Include="Content\Admin\img\timeline-left-arrow%402x.png" />
+    <Content Include="Content\Admin\img\timeline-left-arrow.png" />
+    <Content Include="Content\Admin\img\timeline-right-arrow%402x.png" />
+    <Content Include="Content\Admin\img\timeline-right-arrow.png" />
+    <Content Include="Content\Admin\img\toolbar.gif" />
+    <Content Include="Content\Admin\img\toolbar.png" />
+    <Content Include="Content\Admin\img\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Admin\img\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\Admin\img\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\Admin\img\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\Admin\img\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\Admin\img\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\Admin\img\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\Admin\img\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\Admin\img\ui-icons_222222_256x240.png" />
+    <Content Include="Content\Admin\img\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Admin\img\ui-icons_454545_256x240.png" />
+    <Content Include="Content\Admin\img\ui-icons_888888_256x240.png" />
+    <Content Include="Content\Admin\img\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\Admin\img\uploadify-cancel.png" />
+    <Content Include="Content\Admin\index.html" />
+    <Content Include="Content\Admin\js\bootstrap.js" />
+    <Content Include="Content\Admin\js\bootstrap.min.js" />
+    <Content Include="Content\Admin\js\counter.js" />
+    <Content Include="Content\Admin\js\custom.js" />
+    <Content Include="Content\Admin\js\excanvas.js" />
+    <Content Include="Content\Admin\js\fullcalendar.min.js" />
+    <Content Include="Content\Admin\js\jquery-1.9.1.min.js" />
+    <Content Include="Content\Admin\js\jquery-migrate-1.0.0.min.js" />
+    <Content Include="Content\Admin\js\jquery-ui-1.10.0.custom.min.js" />
+    <Content Include="Content\Admin\js\jquery.chosen.min.js" />
+    <Content Include="Content\Admin\js\jquery.cleditor.min.js" />
+    <Content Include="Content\Admin\js\jquery.cookie.js" />
+    <Content Include="Content\Admin\js\jquery.dataTables.min.js" />
+    <Content Include="Content\Admin\js\jquery.elfinder.min.js" />
+    <Content Include="Content\Admin\js\jquery.flot.js" />
+    <Content Include="Content\Admin\js\jquery.flot.pie.js" />
+    <Content Include="Content\Admin\js\jquery.flot.resize.min.js" />
+    <Content Include="Content\Admin\js\jquery.flot.stack.js" />
+    <Content Include="Content\Admin\js\jquery.gritter.min.js" />
+    <Content Include="Content\Admin\js\jquery.imagesloaded.js" />
+    <Content Include="Content\Admin\js\jquery.iphone.toggle.js" />
+    <Content Include="Content\Admin\js\jquery.knob.modified.js" />
+    <Content Include="Content\Admin\js\jquery.masonry.min.js" />
+    <Content Include="Content\Admin\js\jquery.noty.js" />
+    <Content Include="Content\Admin\js\jquery.raty.min.js" />
+    <Content Include="Content\Admin\js\jquery.sparkline.min.js" />
+    <Content Include="Content\Admin\js\jquery.ui.touch-punch.js" />
+    <Content Include="Content\Admin\js\jquery.uniform.min.js" />
+    <Content Include="Content\Admin\js\jquery.uploadify-3.1.min.js" />
+    <Content Include="Content\Admin\js\modernizr.js" />
+    <Content Include="Content\Admin\js\retina.js" />
+    <Content Include="Content\Admin\login.html" />
+    <Content Include="Content\Admin\messages.html" />
+    <Content Include="Content\Admin\submenu.html" />
+    <Content Include="Content\Admin\submenu2.html" />
+    <Content Include="Content\Admin\submenu3.html" />
+    <Content Include="Content\Admin\table.html" />
+    <Content Include="Content\Admin\tasks.html" />
+    <Content Include="Content\Admin\typography.html" />
+    <Content Include="Content\Admin\ui.html" />
+    <Content Include="Content\Admin\widgets.html" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\NguoiDungCssLayout\font-awesome.css" />
+    <Content Include="Content\NguoiDungCssLayout\fonts.css" />
+    <Content Include="Content\NguoiDungCssLayout\NguoiDungCssLayout.css" />
+    <Content Include="Content\NguoiDungCssLayout\screen.css" />
+    <Content Include="Content\NguoiDungCssLayout\style.css" />
+    <Content Include="Content\NguoiDungCssLayout\TrangChu.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="HinhAnhDĐ\album 1.jpg" />
+    <Content Include="HinhAnhDĐ\album 2.jpg" />
+    <Content Include="HinhAnhDĐ\album 3.jpg" />
+    <Content Include="HinhAnhDĐ\album 4.jpg" />
+    <Content Include="HinhAnhDĐ\album 5.jpg" />
+    <Content Include="HinhAnhDĐ\AnhBaiViet\BaiViet1\bv11.jpg" />
+    <Content Include="HinhAnhDĐ\AnhBaiViet\BaiViet1\bv12.jpg" />
+    <Content Include="HinhAnhDĐ\AnhBaiViet\BaiViet1\bv13.jpg" />
+    <Content Include="HinhAnhDĐ\AnhBaiViet\BaiViet1\bv14.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 1.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 10.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 11.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 12.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 13.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 14.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 15.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 16.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 17.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 18.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 19.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 2.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 20.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 21.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 22.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 23.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 24.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 25.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 26.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 27.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 28.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 29.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 3.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 30.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 31.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 32.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 33.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 34.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 35.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 36.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 37.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 38.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 39.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 4.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 40.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 41.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 42.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 43.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 44.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 45.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 46.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 47.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 48.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 49.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 5.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 50.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 6.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 7.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 8.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Du lịch 9.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 1.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 10.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 11.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 12.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 13.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 14.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 15.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 16.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 17.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 18.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 19.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 2.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 20.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 21.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 22.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 23.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 24.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 25.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 26.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 27.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 28.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 29.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 3.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 30.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 31.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 32.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 32.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 33.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 34.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 35.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 36.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 37.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 38.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 39.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 4.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 40.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 41.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 42.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 43.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 43.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 44.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 45.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 46.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 47.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 48.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 49.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 5.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 50.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 6.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 7.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 8.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\hoạt hình 9.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 1.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 10.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 11.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 12.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 13.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 14.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 15.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 16.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 17.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 18.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 19.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 2.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 20.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 21.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 22.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 23.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 24.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 25.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 26.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 27.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 29.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 3.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 30.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 31.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 32.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 33.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 34.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 35.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 36.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 37.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 38.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 39.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 4.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 40.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 41.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 42.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 43.JPG" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 44.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 45.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 46.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 47.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 49.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 5.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 50.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 6.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 7.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 8.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Hình nền 9.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 1.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 10.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 11.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 12.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 13.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 14.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 15.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 16.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 17.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 18.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 19.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 2.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 20.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 21.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 22.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 23.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 24.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 25.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 26.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 27.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 28.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 29.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 3.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 30.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 31.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 32.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 33.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 34.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 35.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 36.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 37.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 38.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 39.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 4.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 40.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 41.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 42.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 43.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 44.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 45.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 46.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 47.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 48.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 49.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 5.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 50.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 6.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 7.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 8.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Kiến trúc 9.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 1.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 10.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 11.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 12.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 13.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 14.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 15.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 16.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 17.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 18.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 19.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 2.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 20.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 21.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 22.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 23.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 24.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 25.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 28.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 29.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 3.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 30.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 31.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 32.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 33.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 34.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 35.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 36.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 37.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 38.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 39.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 4.png" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 40.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 41.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 42.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 43.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 44.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 45.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 46.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 47.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 48.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 49.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 5.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 50.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 6.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 7.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 8.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Phim 9.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 1.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 10.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 11.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 12.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 13.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 14.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 15.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 16.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 17.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 18.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 19.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 2.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 20.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 21.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 22.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 23.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 24.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 25.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 26.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 27.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 28.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 29.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 3.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 30.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 31.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 32.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 33.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 34.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 35.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 36.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 37.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 38.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 39.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 4.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 40.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 41.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 42.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 43.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 44.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 45.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 46.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 47.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 48.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 49.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 5.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 50.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 6.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 7.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 8.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thiên nhiên 9.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 1.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 10.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 11.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 12.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 13.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 14.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 15.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 16.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 17.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 18.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 19.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 2.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 20.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 21.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 22.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 23.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 24.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 25.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 26.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 27.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 28.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 29.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 3.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 30.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 31.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 32.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 33.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 34.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 35.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 36.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 37.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 38.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 39.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 4.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 40.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 41.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 42.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 43.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 44.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 45.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 46.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 47.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 48.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 49.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 5.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 50.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 6.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 7.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 8.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Thời trang 9.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 1.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 10.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 11.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 12.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 13.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 14.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 15.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 16.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 17.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 18.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 19.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 2.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 20.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 21.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 22.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 23.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 24.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 25.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 26.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 27.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 28.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 29.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 3.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 30.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 31.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 32.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 33.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 34.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 35.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 36.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 37.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 38.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 39.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 4.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 40.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 41.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 42.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 43.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 44.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 45.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 46.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 47.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 48.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 49.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 5.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 50.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 6.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 7.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 8.jpg" />
+    <Content Include="HinhAnhDĐ\AnhCĐ\Tâm linh 9.jpg" />
+    <Content Include="HinhAnhDĐ\Bão 1.jpg" />
+    <Content Include="HinhAnhDĐ\diễn đàn 1.jpg" />
+    <Content Include="HinhAnhDĐ\diễn đàn 2.jpg" />
+    <Content Include="HinhAnhDĐ\diễn đàn 3.jpg" />
+    <Content Include="HinhAnhDĐ\Doraemon 1.jpg" />
+    <Content Include="HinhAnhDĐ\Du lịch 1.jpg" />
+    <Content Include="HinhAnhDĐ\Du lịch 2.jpg" />
+    <Content Include="HinhAnhDĐ\Du lịch 3.jpg" />
+    <Content Include="HinhAnhDĐ\Du lịch 4.jpg" />
+    <Content Include="HinhAnhDĐ\Du lịch 5.jpg" />
+    <Content Include="HinhAnhDĐ\Du lịch 6.jpg" />
+    <Content Include="HinhAnhDĐ\Du lịch 7.jpg" />
+    <Content Include="HinhAnhDĐ\Du lịch 8.jpg" />
+    <Content Include="HinhAnhDĐ\Hoạt hình 1.jpg" />
+    <Content Include="HinhAnhDĐ\nghệ sĩ 1.jpg" />
+    <Content Include="HinhAnhDĐ\nghệ sĩ 2.jpg" />
+    <Content Include="HinhAnhDĐ\nghệ sĩ 3.jpg" />
+    <Content Include="HinhAnhDĐ\nghệ sĩ 4.jpg" />
+    <Content Include="HinhAnhDĐ\nghệ sĩ 5.jpg" />
+    <Content Include="HinhAnhDĐ\Đó đây 1.jpg" />
+    <Content Include="HinhAnh\1.jpg" />
+    <Content Include="HinhAnh\anh1.png" />
+    <Content Include="HinhAnh\anh2.png" />
+    <Content Include="HinhAnh\anh3.png" />
+    <Content Include="HinhAnh\anh4.png" />
+    <Content Include="HinhAnh\anh5.png" />
+    <Content Include="HinhAnh\search.png" />
+    <Content Include="Models\Chia_se_anh.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Chia_se_anh.Context.cs</LastGenOutput>
+      <DependentUpon>Chia_se_anh.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Chia_se_anh.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Chia_se_anh.edmx</DependentUpon>
+      <LastGenOutput>Chia_se_anh.cs</LastGenOutput>
+    </Content>
+    <Content Include="NivoSlider\jquery.nivo.slider.js" />
+    <Content Include="NivoSlider\jquery.nivo.slider.pack.js" />
+    <Content Include="NivoSlider\nivo-slider.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Chia_se_anh.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Chia_se_anh.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Chia_se_anh.edmx.diagram">
+      <DependentUpon>Chia_se_anh.edmx</DependentUpon>
+    </Content>
+    <Content Include="HinhAnhDĐ\AnhCĐ\iloveimg-resized_3.zip" />
+    <Content Include="Content\Admin\font\fontawesome-webfont-0.eot" />
+    <Content Include="Content\Admin\font\fontawesome-webfont-62877.eot" />
+    <Content Include="Content\Admin\font\fontawesome-webfont-62877.ttf" />
+    <Content Include="Content\Admin\font\fontawesome-webfont-62877.woff" />
+    <Content Include="Content\Admin\font\glyphicons-regular-0.eot" />
+    <Content Include="Content\Admin\font\glyphicons-regular.eot" />
+    <Content Include="Content\Admin\font\glyphicons-regular.ttf" />
+    <Content Include="Content\Admin\font\glyphicons-regular.woff" />
+    <Content Include="Content\Admin\font\glyphiconshalflings-regular-0.eot" />
+    <Content Include="Content\Admin\font\glyphiconshalflings-regular.eot" />
+    <Content Include="Content\Admin\font\glyphiconshalflings-regular.ttf" />
+    <Content Include="Content\Admin\font\glyphiconshalflings-regular.woff" />
+    <Content Include="Content\Admin\README.md" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\LayOut\NguoiDungLayout.cshtml" />
+    <Content Include="Views\Home\DienDanPartial.cshtml" />
+    <Content Include="Views\ChuDe\ChuDePartial.cshtml" />
+    <Content Include="Views\Home\NgheSiPartial.cshtml" />
+    <Content Include="Views\ChuDe\AnhTheoChuDe.cshtml" />
+    <Content Include="Views\ChuDe\DanhMucChuDe.cshtml" />
+    <Content Include="Views\NguoiDung\DangKy.cshtml" />
+    <Content Include="Views\NguoiDung\DangNhap.cshtml" />
+    <Content Include="Views\Home\HinhNenPartial.cshtml" />
+    <Content Include="Views\Home\AlBumView.cshtml" />
+    <Content Include="Views\NgheSi\NgheSi.cshtml" />
+    <Content Include="Views\Home\XemChiTietNS.cshtml" />
+    <Content Include="Views\Home\ChiTietDienDan.cshtml" />
+    <Content Include="Views\AllHoatDong\AllHD.cshtml" />
+    <Content Include="Views\Home\AllNgheSi.cshtml" />
+    <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />
+    <Content Include="Views\LayOut\AdminLayout.cshtml" />
+    <Content Include="Views\QuanLyWeb\Index.cshtml" />
+    <Content Include="Views\QuanLyWeb\ThemMoi.cshtml" />
+    <Content Include="Views\Upload\Upload.cshtml" />
+    <Content Include="Views\QuanLyWeb\TaiKhoan.cshtml" />
+    <Content Include="Views\QuanLyWeb\BaiViet.cshtml" />
+    <Content Include="Views\QuanLyWeb\AlBum.cshtml" />
+    <Content Include="Views\QuanLyWeb\NgheSi.cshtml" />
+    <Content Include="Views\QuanLyWeb\ThemND.cshtml" />
+    <Content Include="Views\QuanLyWeb\Chinhsua.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\AllNgheSi\" />
+    <Folder Include="Views\GioiThieu\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52235</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52235/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

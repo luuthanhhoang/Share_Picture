@@ -1,0 +1,49 @@
+﻿
+@using ĐA1_Chia_se_anh.Models;
+@model List<AlBum>
+
+<h2 id="new-Album"> Tất cả AlBum >>> </h2>
+@foreach (var item in Model)
+{
+    <div id="AlbumMoi">
+        <div id="AnhBia">
+            <a href="#">
+                <img src="@Url.Content("~/HinhAnhDĐ/" + item.AnhBia)" width="270" height="260" />
+            </a>
+        </div>
+        <div id="TenNS" style="margin-bottom:50px">@item.TenAB</div>
+    </div>
+}
+
+<style>
+    #AlbumMoi, #AnhBia {
+        float: left;
+        text-align: center;
+        width: 320px;
+    }
+
+    #new-Album, #new-nghesi {
+        font-family: 'Segoe UI';
+        font-weight: bold;
+    }
+
+    #TenAlbum, #TenNS, #hinhnen {
+        font-family: 'Segoe UI';
+        font-weight: bold;
+    }
+
+    #new-Album{
+        margin-left: 4%;
+    }
+    #new-nghesi, #AnhBia {
+        margin-left: 8.2%;
+    }
+    #new-Album{
+        margin-bottom: 30px;
+    }
+</style>
+
+@{
+    ViewBag.Title = "AlBumView";
+    Layout = "~/Views/LayOut/NguoiDungLayout.cshtml";
+}

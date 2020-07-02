@@ -1,0 +1,20 @@
+﻿@using ĐA1_Chia_se_anh.Models;
+@model BaiViet
+@{
+    ViewBag.Title = "ChiTietDienDan";
+    Layout = "~/Views/LayOut/NguoiDungLayout.cshtml";
+}
+
+    <h3 style="font-family: 'Segoe UI'; font-weight: bold; text-align: center"> @Model.TenBaiViet </h3>
+<div style="text-align:center; margin-bottom: 30px">Ngày đăng bài: @Model.NgayCapNhat. Mã bài viết: @Model.MaBaiViet</div>
+<div style="font-family:'Segoe UI'; margin-left: 4%; margin-bottom: 30px; text-align: justify;
+    width: 1250px;">
+    <div>
+        <h4 style="font-weight: bold">
+            @Model.NoiDung
+        </h4>
+    </div>
+</div>
+
+
+

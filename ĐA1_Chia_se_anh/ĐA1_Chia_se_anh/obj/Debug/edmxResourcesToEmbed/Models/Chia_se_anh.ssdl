@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChiaSeAnhModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="TenDangNhap" />
+    </Key>
+    <Property Name="TenDangNhap" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="MatKhau" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="AlBum">
+    <Key>
+      <PropertyRef Name="MaAB" />
+    </Key>
+    <Property Name="MaAB" Type="int" Nullable="false" />
+    <Property Name="MaNS" Type="int" />
+    <Property Name="TenAB" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayPhatHanh" Type="date" />
+    <Property Name="Moi" Type="int" />
+    <Property Name="AnhBia" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Anh">
+    <Key>
+      <PropertyRef Name="MaA" />
+    </Key>
+    <Property Name="MaA" Type="int" Nullable="false" />
+    <Property Name="MaNS" Type="int" />
+    <Property Name="MaCD" Type="int" />
+    <Property Name="MaAB" Type="int" />
+    <Property Name="HinhAnh" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayCapNhat" Type="date" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="BaiViet">
+    <Key>
+      <PropertyRef Name="MaBaiViet" />
+    </Key>
+    <Property Name="MaBaiViet" Type="int" Nullable="false" />
+    <Property Name="TenBaiViet" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaND" Type="int" />
+    <Property Name="NgayCapNhat" Type="date" />
+    <Property Name="AnhBaiViet" Type="image" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ChuDe">
+    <Key>
+      <PropertyRef Name="MaCD" />
+    </Key>
+    <Property Name="MaCD" Type="int" Nullable="false" />
+    <Property Name="TenChuDe" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CTNguoiDung">
+    <Key>
+      <PropertyRef Name="MaND" />
+    </Key>
+    <Property Name="MaND" Type="int" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenDangNhap" Type="varchar" MaxLength="50" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="SĐT" Type="int" />
+    <Property Name="ĐiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NgheSi">
+    <Key>
+      <PropertyRef Name="MaNS" />
+    </Key>
+    <Property Name="MaNS" Type="int" Nullable="false" />
+    <Property Name="TenNS" Type="nvarchar" MaxLength="50" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="SĐT" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="AnhNS" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Anh_AlBum">
+    <End Role="AlBum" Type="Self.AlBum" Multiplicity="0..1" />
+    <End Role="Anh" Type="Self.Anh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AlBum">
+        <PropertyRef Name="MaAB" />
+      </Principal>
+      <Dependent Role="Anh">
+        <PropertyRef Name="MaAB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anh_ChuDe">
+    <End Role="ChuDe" Type="Self.ChuDe" Multiplicity="0..1" />
+    <End Role="Anh" Type="Self.Anh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChuDe">
+        <PropertyRef Name="MaCD" />
+      </Principal>
+      <Dependent Role="Anh">
+        <PropertyRef Name="MaCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anh_NgheSi">
+    <End Role="NgheSi" Type="Self.NgheSi" Multiplicity="0..1" />
+    <End Role="Anh" Type="Self.Anh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NgheSi">
+        <PropertyRef Name="MaNS" />
+      </Principal>
+      <Dependent Role="Anh">
+        <PropertyRef Name="MaNS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaiViet_CTNguoiDung">
+    <End Role="CTNguoiDung" Type="Self.CTNguoiDung" Multiplicity="0..1" />
+    <End Role="BaiViet" Type="Self.BaiViet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CTNguoiDung">
+        <PropertyRef Name="MaND" />
+      </Principal>
+      <Dependent Role="BaiViet">
+        <PropertyRef Name="MaND" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ChiaSeAnhModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AlBum" EntityType="Self.AlBum" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Anh" EntityType="Self.Anh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BaiViet" EntityType="Self.BaiViet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChuDe" EntityType="Self.ChuDe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTNguoiDung" EntityType="Self.CTNguoiDung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NgheSi" EntityType="Self.NgheSi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Anh_AlBum" Association="Self.FK_Anh_AlBum">
+      <End Role="AlBum" EntitySet="AlBum" />
+      <End Role="Anh" EntitySet="Anh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anh_ChuDe" Association="Self.FK_Anh_ChuDe">
+      <End Role="ChuDe" EntitySet="ChuDe" />
+      <End Role="Anh" EntitySet="Anh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anh_NgheSi" Association="Self.FK_Anh_NgheSi">
+      <End Role="NgheSi" EntitySet="NgheSi" />
+      <End Role="Anh" EntitySet="Anh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaiViet_CTNguoiDung" Association="Self.FK_BaiViet_CTNguoiDung">
+      <End Role="CTNguoiDung" EntitySet="CTNguoiDung" />
+      <End Role="BaiViet" EntitySet="BaiViet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,17 @@
+﻿@using ĐA1_Chia_se_anh.Models;
+@model List<BaiViet>
+
+<h1 class="item-header">Hoạt động diễn đàn</h1>
+@{
+    foreach (var item in Model)
+    {
+        <div class="activity-list-update">           
+             <a href="@Url.Action("ChiTietDienDan","Home", new { @MaBV = item.MaBaiViet})"><p><strong>@item.TenBaiViet</strong></p></a>
+            <div class="clear"></div>
+        </div>
+        }
+    }
+
+<a href="@Url.Action("AllHD","AllHoatDong")" class="item-footer green">
+    Xem tất cả hoạt động
+</a>

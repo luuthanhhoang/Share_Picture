@@ -1,0 +1,62 @@
+﻿ @using ĐA1_Chia_se_anh.Models;
+@model List<AlBum>
+<link href="~/Content/NguoiDungCssLayout/TrangChu.css" rel="stylesheet" />
+<link href="~/Content/NguoiDungCssLayout/NguoiDungCssLayout.css" rel="stylesheet" />
+@{
+    Layout = "~/Views/LayOut/NguoiDungLayout.cshtml";
+    ViewBag.Title = "Chia sẻ ảnh trực tuyến";
+}
+
+<section>
+    <div id="ghichu">
+        <h2>Tìm ảnh theo chủ đề</h2>
+    </div>
+    <div id="chude">
+        @Html.Action("ChuDePartial", "ChuDe")
+    </div>
+</section>
+<section>
+    <div id="col1" >
+        <div id="new-nghesi">
+            <h2>Nghệ sĩ nổi bật</h2>
+        </div>
+        @Html.Action("NgheSiPartial", "Home")
+    </div>
+    <div id="col2">
+        <div id="new-Album">
+            <h2>Album mới</h2>
+        </div>
+
+        <div id="divBody">
+            @foreach (var item in Model)
+            {
+                <div id="AlbumMoi">
+                    <div id="AnhBia">
+                        <a href="#">
+                            <img src="@Url.Content("~/HinhAnhDĐ/" + item.AnhBia)" width="270" height="260" />
+                        </a></div>
+
+                    <div id="TenAlbum"  style="margin-bottom:50px">@item.TenAB</div>
+                </div>
+            }
+        </div>
+    </div>
+    <div id="col3">
+        <div id="new-Album">
+            <h2>Dành cho bạn</h2>
+        </div>
+
+        <div id="divBody">
+                @Html.Action("HinhNenPartial", "Home")
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+

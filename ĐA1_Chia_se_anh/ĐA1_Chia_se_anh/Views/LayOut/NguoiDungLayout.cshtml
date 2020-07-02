@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Chia sẻ ảnh trực tuyến</title>
+
+    <link href="~/Content/NguoiDungCssLayout/NguoiDungCssLayout.css" rel="stylesheet" />
+    <link href="~/Content/NguoiDungCssLayout/fonts.css" rel="stylesheet" />
+    <link href="~/Content/NguoiDungCssLayout/screen.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="~/NivoSlider/nivo-slider.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.nivo.slider.js"></script>
+    <script src="~/NivoSlider/jquery.nivo.slider.js"></script>
+    <script src="~/NivoSlider/jquery.nivo.slider.pack.js"></script>
+</head>
+<body>
+
+    <div id="ToanTrang">
+        <section class="blank">
+            <div class="flash">
+                <div class="icDienThoai">
+                    <i class="fa fa-phone"></i>
+                    Thông tin liên hệ: (+84) 327957373
+                </div>
+                @*Tạo div đăng kí đăng nhập*@
+                
+                <div class="DangKyDangNhap">
+                    @if (Session["TenDangNhap"] == null)
+                    {
+                        <i class="fa fa-sign-in-alt"></i>
+                        <a href="@Url.Action("DangKy", "NguoiDung")">
+                            Đăng ký
+                        </a>
+                        <i class="fa fa-unlock"></i>
+                        <a href="@Url.Action("DangNhap", "NguoiDung")">
+                            Đăng nhập
+                        </a>
+                    }
+                    else
+                    {
+                        <i class="fa fa-unlock"></i>
+
+                        <a href="@Url.Action("DangNhap", "NguoiDung")">
+                            Đăng xuất
+                        </a>
+                    }
+                </div>
+            </div>
+
+            @*Xây dựng div Menu header*@
+            <div class="flash success" id="divDanhMuc">
+                @*Hộp thoại tìm kiếm*@
+                <div id="txtTimKiem" style="float:left">
+                    @using (Html.BeginForm("KetQuaTimKiem", "TimKiem", FormMethod.Post))
+                    {
+                        @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "TextBoxTimKiem", @placeholder = "Nhập từ khóa cần tìm" });
+                    }
+            
+                </div> 
+                @*Menu bên phải header*@
+                <ul class="navMenu">
+                    <li>
+                        <a href="@Url.Action("Index","Home")">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="#">Giới thiệu</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("AlBumView","Home")">Album</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("AllNgheSi","Home")">Nghệ sĩ</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("AllHD","AllHoatDong")">Diễn đàn</a>
+                    </li>
+                    <li>
+                        <a href="#">Upload</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section>
+            <div id="divMenuLeft">
+                <div class="activity">
+                    @Html.Action("DienDanPartial", "Home")
+                </div>
+            </div>
+            @*Chèn div ảnh*@
+            <div id="slider" class="nivoSlider">
+                <img src="~/HinhAnh/anh1.png" />
+                <img src="~/HinhAnh/anh2.png" />
+                <img src="~/HinhAnh/anh3.png" />
+                <img src="~/HinhAnh/anh4.png" />
+                <img src="~/HinhAnh/anh5.png" />
+            </div>
+            <div style="clear:both"></div>
+        </section>
+    </div>
+   
+
+    @*Script chạy slider*@
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                controlNav: false,
+                nextText: '',
+                prevText: ''
+            });
+        });
+     
+    </script>
+    @*Div body*@
+    <div id="NoiDung">
+        @RenderBody()
+    </div>
+</body>
+</html>

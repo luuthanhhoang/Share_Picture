@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ĐA1_Chia_se_anh.Models.BaiViet>
+
+@{
+    ViewBag.Title = "BaiViet";
+    Layout = "~/Views/LayOut/AdminLayout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaBaiViet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenBaiViet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaND)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayCapNhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaBaiViet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenBaiViet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaND)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayCapNhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoiDung)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

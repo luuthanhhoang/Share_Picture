@@ -1,0 +1,16 @@
+﻿@using ĐA1_Chia_se_anh.Models;
+
+@model List<ChuDe>
+@{
+    ViewBag.Title = "DanhMucChuDe";
+    Layout = "~/Views/LayOut/NguoiDungLayout.cshtml";
+}
+<h2 style="font-family:'Segoe UI'; font-weight: bold; margin-left:4%">Tất cả chủ đề >>></h2>
+
+@*Hiển thị danh mục chủ đề*@
+@foreach (var item in Model)
+{
+    <a style="float:left; width: 200px; margin-left:4.2%; margin-top: 2%;text-decoration:none; font-family:'Segoe UI'; text-align:center
+;font-weight: bold; background-color:#b06010; margin-bottom: 30px" href="@Url.Action("AnhTheoChuDe",new { @MaChuDe = item.MaCD})" class="button button-submit">@item.TenChuDe</a> 
+
+}

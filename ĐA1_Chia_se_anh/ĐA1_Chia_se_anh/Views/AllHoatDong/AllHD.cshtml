@@ -1,0 +1,17 @@
+﻿@using ĐA1_Chia_se_anh.Models;
+@model List<BaiViet>
+@{
+    ViewBag.Title = "AllHD";
+    Layout = "~/Views/LayOut/NguoiDungLayout.cshtml";
+}
+<div style="font-family: 'Segoe UI'; font-weight: bold; margin-left: 4%">
+    <h2 style="margin-top: 50px; margin-bottom: 50px">Tất cả hoạt động >>></h2>
+    @foreach (var item in Model)
+    {
+        <div class="activity-list-update">
+            <a href="@Url.Action("ChiTietDienDan","Home", new { @MaBV = item.MaBaiViet}))"><p><strong>@item.TenBaiViet</strong></p></a>
+            <div class="clear"></div>
+        </div>
+    }
+</div>
+

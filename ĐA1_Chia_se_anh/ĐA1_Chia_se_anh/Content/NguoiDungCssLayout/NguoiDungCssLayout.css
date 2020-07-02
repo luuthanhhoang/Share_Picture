@@ -1,0 +1,84 @@
+﻿/*Sử dụng độ rộng cho div toàn trang*/
+#ToanTrang{
+    position: relative;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+}
+/*Thiết kế link đăng kí đăng nhập*/
+.DangKyDangNhap{
+    float: right;
+    margin-top:-1%;
+}
+.DangKyDangNhap a:hover{
+    text-decoration:none;
+    color:green;
+}
+.icDienThoai{
+    float:left;
+    margin-top: -1%;
+}
+/*Css div danh mục*/
+#divDanhMuc {
+    height: 30px;
+}
+/*Css cho menu*/
+.navMenu{
+    float: right;
+    margin-right: 10%;
+}
+.navMenu li {
+        display: inline;
+        border-right: solid 0.1px rgba(0,0,0,.05);
+        padding: 20px;
+        padding-top: 19px;
+        padding-bottom: 22px;
+    }
+/*Css hover thay đổi màu chậm*/
+.navMenu li:hover {
+      background-color:rgba(0,0,0,.5);
+      -webkit-transition: all .5s ease-out;
+      -moz-transition:all .5s ease-out;
+}
+.navMenu a:hover{
+    text-decoration:none;
+}
+/*Css div tìm kiếm*/
+#txtTimKiem {
+    float: left;
+    margin-left:5%;
+
+}
+#txtTimKiem input {
+        height: 0;
+        font-family: 'Segoe UI';
+    }
+/*Css cho nivoslider*/
+#slider {
+    float: left;
+    width: 930px;
+    height: 360px;
+}
+#slide img {
+    width: 930px;   
+}
+#divMenuLeft{
+    float:left;
+    margin-left:2%;
+}
+#ghichu {
+    font-family: 'Segoe UI';
+    font-weight: bold;
+}
+
+#ghichu, #chude {
+    padding-top: 10px;
+    margin-left: 2%;
+}
+
+#chude a:hover {
+       text-decoration:none;
+    }
+#box, #bt{
+    float:left;
+}
+

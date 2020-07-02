@@ -1,0 +1,23 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<ĐA1_Chia_se_anh.Models.Anh>
+<link href="~/Content/NguoiDungCssLayout/TrangChu.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "KetQuaTimKiem";
+    Layout = "~/Views/LayOut/NguoiDungLayout.cshtml";
+}
+
+<div id="divBody" style="margin-left: 2.5%">
+    <div style="font-family: 'Segoe UI'; font-weight: bold">
+        <h3 style="margin-left: 1.8%">
+            @ViewBag.ThongBao
+        </h3>       
+    </div>
+    @foreach (var item in Model)
+    {
+        <div id="AlbumMoi">
+            <div id="AnhBia"><img src="@Url.Content("~/HinhAnhDĐ/AnhCĐ/" + item.HinhAnh)" width="270" height="260" /></div>
+            <div id="TenAlbum" style="margin-bottom:50px">@item.HinhAnh,@item.NgayCapNhat</div>
+        </div>
+    }
+</div>
